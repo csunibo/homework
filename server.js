@@ -69,8 +69,13 @@ app.post(apiEndpoint + '/rejectBan', (req, res) => {
 		const updatedBans = bans.filter(
 			(ban) => !(ban.name === name && ban.description === description)
 		);
+		const banIndex = bans.findIndex((ban) => ban.name === name && ban.description === description);
 
-		if (bans.length !== updatedBans.length) {
+		if (banIndex !== -1) {
+			bans[banIndex].approved -= 1;
+			writeBans(bans);
+			res.json({ message: 'Ban disapproved successfully', ban: bans[banIndex] });
+		} else if (bans.length !== updatedBans.length && bans[banIndex].approved <= -5) {
 			writeBans(updatedBans);
 			res.json({ message: 'Ban rejected successfully' });
 		} else {
