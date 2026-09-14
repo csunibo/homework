@@ -3,6 +3,7 @@ import cors from 'cors';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { handler } from './build/handler.js';
 
 const port = 3001;
 const app = express();
@@ -89,6 +90,7 @@ app.post(apiEndpoint + '/rejectBan', (req, res) => {
 		res.status(500).json({ error: 'Failed to reject ban' });
 	}
 });
+app.use(handler);
 
 app.listen(port, () => {
 	console.log(`Server is running on port ${port}`);
