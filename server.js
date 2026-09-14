@@ -28,6 +28,7 @@ app.get(apiEndpoint + '/getBans', (req, res) => {
 		const bans = readBans();
 		res.json(bans);
 	} catch (error) {
+		console.error(error)
 		res.status(500).json({ error: 'Failed to read bans' });
 	}
 });
@@ -40,6 +41,7 @@ app.post(apiEndpoint + '/addBan', (req, res) => {
 		writeBans(bans);
 		res.json({ message: 'Ban added successfully', ban: newBan });
 	} catch (error) {
+		console.error(error)
 		res.status(500).json({ error: 'Failed to add ban' });
 	}
 });
@@ -58,6 +60,7 @@ app.post(apiEndpoint + '/approveBan', (req, res) => {
 			res.status(404).json({ error: 'Ban not found' });
 		}
 	} catch (error) {
+		console.error(error)
 		res.status(500).json({ error: 'Failed to approve ban' });
 	}
 });
@@ -82,6 +85,7 @@ app.post(apiEndpoint + '/rejectBan', (req, res) => {
 			res.status(404).json({ error: 'Ban not found' });
 		}
 	} catch (error) {
+		console.error(error)
 		res.status(500).json({ error: 'Failed to reject ban' });
 	}
 });

@@ -6,14 +6,14 @@ module.exports = {
 	daisyui: {
 		themes: [
 			{
-				csunibo: {
+				cartabinaria: {
 					primary: '#971327',
 					secondary: '#EA8C55',
 					accent: '#4281A4',
 					neutral: '#02111B',
 					'base-100': '#F1FAEE'
 				},
-				csunibo_dark: {
+				cartabinaria_dark: {
 					primary: '#971327',
 					secondary: '#EA8C55',
 					accent: '#4281A4',
@@ -22,7 +22,7 @@ module.exports = {
 				}
 			}
 		],
-		darkTheme: 'csunibo_dark'
+		darkTheme: 'cartabinaria_dark'
 	},
 	plugins: [
 		// Iconify plugin

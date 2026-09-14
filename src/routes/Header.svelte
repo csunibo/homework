@@ -5,7 +5,7 @@
 
 <header class="flex items-center justify-between p-6 bg-base/50 border-b border-base-200">
 	<div class="flex items-center">
-		<h1 class="text-secondary text-lg">CSUnibo Homework Repository</h1>
+		<h1 class="text-secondary text-lg">CartaBinaria Homework Repository</h1>
 	</div>
 	<nav>
 		<ul class="flex space-x-4">
